@@ -151,7 +151,16 @@ function App() {
     "Available": "No"
   }
 ]
+
+const users = [
+  { name: "Shruti", password: "password123", role: "admin" },
+  { name: "Aryan", password: "securePass456", role: "user" },
+  { name: "Mamta", password: "Pass789", role: "admin" },
+  { name: "Khushi", password: "StrongPass", role: "user" }
+];
+
   localStorage.setItem("books",JSON.stringify(books)) 
+  localStorage.setItem("users", JSON.stringify(users))
 
   return (
     <>
