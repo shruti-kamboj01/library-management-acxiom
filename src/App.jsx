@@ -9,7 +9,149 @@ import Reports from './pages/Reports'
 import Transactions from './pages/Transactions'
 
 function App() {
- 
+  const books = [
+  {
+    "BookName": "The Great Gatsby",
+    "AuthorName": "F. Scott Fitzgerald",
+    "SerialNumber": "001-1",
+    "SelectToIssue": false,
+    "Available": "Yes"
+  },
+  {
+    "BookName": "The Great Gatsby",
+    "AuthorName": "F. Scott Fitzgerald",
+    "SerialNumber": "001-2",
+    "SelectToIssue": false,
+    "Available": "No"
+  },
+  {
+    "BookName": "To Kill a Mockingbird",
+    "AuthorName": "Harper Lee",
+    "SerialNumber": "002-1",
+    "SelectToIssue": true,
+    "Available": "Yes"
+  },
+  {
+    "BookName": "To Kill a Mockingbird",
+    "AuthorName": "Harper Lee",
+    "SerialNumber": "002-2",
+    "SelectToIssue": true,
+    "Available": "No"
+  },
+  {
+    "BookName": "1984",
+    "AuthorName": "George Orwell",
+    "SerialNumber": "003-1",
+    "SelectToIssue": false,
+    "Available": "Yes"
+  },
+  {
+    "BookName": "1984",
+    "AuthorName": "George Orwell",
+    "SerialNumber": "003-2",
+    "SelectToIssue": false,
+    "Available": "No"
+  },
+  {
+    "BookName": "Pride and Prejudice",
+    "AuthorName": "Jane Austen",
+    "SerialNumber": "004-1",
+    "SelectToIssue": true,
+    "Available": "Yes"
+  },
+  {
+    "BookName": "Pride and Prejudice",
+    "AuthorName": "Jane Austen",
+    "SerialNumber": "004-2",
+    "SelectToIssue": false,
+    "Available": "No"
+  },
+  {
+    "BookName": "Moby Dick",
+    "AuthorName": "Herman Melville",
+    "SerialNumber": "005-1",
+    "SelectToIssue": false,
+    "Available": "Yes"
+  },
+  {
+    "BookName": "Moby Dick",
+    "AuthorName": "Herman Melville",
+    "SerialNumber": "005-2",
+    "SelectToIssue": false,
+    "Available": "No"
+  },
+  {
+    "BookName": "War and Peace",
+    "AuthorName": "Leo Tolstoy",
+    "SerialNumber": "006-1",
+    "SelectToIssue": true,
+    "Available": "Yes"
+  },
+  {
+    "BookName": "War and Peace",
+    "AuthorName": "Leo Tolstoy",
+    "SerialNumber": "006-2",
+    "SelectToIssue": true,
+    "Available": "No"
+  },
+  {
+    "BookName": "The Catcher in the Rye",
+    "AuthorName": "J.D. Salinger",
+    "SerialNumber": "007-1",
+    "SelectToIssue": false,
+    "Available": "Yes"
+  },
+  {
+    "BookName": "The Catcher in the Rye",
+    "AuthorName": "J.D. Salinger",
+    "SerialNumber": "007-2",
+    "SelectToIssue": false,
+    "Available": "No"
+  },
+  {
+    "BookName": "The Hobbit",
+    "AuthorName": "J.R.R. Tolkien",
+    "SerialNumber": "008-1",
+    "SelectToIssue": true,
+    "Available": "Yes"
+  },
+  {
+    "BookName": "The Hobbit",
+    "AuthorName": "J.R.R. Tolkien",
+    "SerialNumber": "008-2",
+    "SelectToIssue": true,
+    "Available": "No"
+  },
+  {
+    "BookName": "Brave New World",
+    "AuthorName": "Aldous Huxley",
+    "SerialNumber": "009-1",
+    "SelectToIssue": false,
+    "Available": "Yes"
+  },
+  {
+    "BookName": "Brave New World",
+    "AuthorName": "Aldous Huxley",
+    "SerialNumber": "009-2",
+    "SelectToIssue": false,
+    "Available": "No"
+  },
+  {
+    "BookName": "The Odyssey",
+    "AuthorName": "Homer",
+    "SerialNumber": "010-1",
+    "SelectToIssue": true,
+    "Available": "Yes"
+  },
+  {
+    "BookName": "The Odyssey",
+    "AuthorName": "Homer",
+    "SerialNumber": "010-2",
+    "SelectToIssue": true,
+    "Available": "No"
+  }
+]
+  localStorage.setItem("books",JSON.stringify(books)) 
 
   return (
     <>
