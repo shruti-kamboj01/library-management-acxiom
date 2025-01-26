@@ -20,6 +20,8 @@ const Login = () => {
   };
   const submithandler = (e) => {
     e.preventDefault();
+    localStorage.setItem("name", formdata.name);
+    localStorage.setItem("password", formdata.password)
     if (user.role === "admin") {
       navigate("/admin");
     } else if (user.role === "user") {

@@ -8,6 +8,11 @@ const Admin = () => {
   const pathname = path.split("/").pop();
 
   localStorage.setItem("loggedInAs", pathname);
+  
+  const logoutHandler = () => {
+    localStorage.clear()
+    navigate('/logout')
+  }
 
   return (
     <div className="flex flex-col gap-y-3 w-11/12 mt-2">
@@ -81,7 +86,7 @@ const Admin = () => {
       <div className="flex justify-end">
         <button
           className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
-          onClick={() => navigate("/logout")}
+          onClick={logoutHandler}
         >
           Log Out
         </button>
