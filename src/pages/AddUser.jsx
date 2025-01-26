@@ -3,11 +3,15 @@ import { useNavigate } from "react-router";
 
 const AddUser = () => {
   const navigate = useNavigate();
+  const navigateHandler = () => {
+    loggedInAs == "admin" ? navigate("/admin") : navigate("/user");
+  };
+
   return (
     <div className="w-11/12 mx-auto">
       <div className="flex justify-end ">
         <button
-          onClick={() => navigate("/admin")}
+          onClick={navigateHandler}
           className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
         >
           Home

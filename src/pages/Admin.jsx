@@ -1,8 +1,14 @@
 import React from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 
 const Admin = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const path = location.pathname;
+  const pathname = path.split("/").pop();
+
+  localStorage.setItem("loggedInAs", pathname);
+
   return (
     <div className="flex flex-col gap-y-3 w-11/12 mt-2">
       <div className="flex justify-between">
@@ -18,18 +24,21 @@ const Admin = () => {
         </button>
       </div>
       <div className="flex justify-evenly">
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
-        onClick={() => navigate("/maintenance")}
+        <button
+          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+          onClick={() => navigate("/maintenance")}
         >
           Maintenance
         </button>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
-        onClick={() => navigate("/reports")}
+        <button
+          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+          onClick={() => navigate("/reports")}
         >
           Reports
         </button>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
-        onClick={() => navigate("/transactions")}
+        <button
+          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+          onClick={() => navigate("/transactions")}
         >
           Transactions
         </button>
@@ -70,13 +79,13 @@ const Admin = () => {
         </table>
       </div>
       <div className="flex justify-end">
-      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
-      onClick={() => navigate('/logout')}
-      >
+        <button
+          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+          onClick={() => navigate("/logout")}
+        >
           Log Out
         </button>
       </div>
-     
     </div>
   );
 };

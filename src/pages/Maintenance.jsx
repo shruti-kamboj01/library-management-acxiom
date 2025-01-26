@@ -3,10 +3,13 @@ import { useNavigate } from 'react-router'
 
 const Maintenance = () => {
     const navigate = useNavigate();
+    const navigateHandler = () => {
+        loggedInAs == "admin" ? navigate('/admin') : navigate('/user')
+    }
   return (
     <div className='flex flex-col w-11/12 mx-auto'>
         <div className='flex justify-end'>
-        <button onClick={() => navigate('/admin')}
+        <button onClick={navigateHandler}
             className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
             >Home</button>
             </div> 

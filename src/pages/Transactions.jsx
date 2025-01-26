@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Book_availability } from '../components/Book_availability'
+import { useNavigate } from 'react-router'
 
 const Transactions = () => {
+  const navigate = useNavigate()
   const books = JSON.parse(localStorage.getItem("books"))
   let available_books = new Set()
   let available_authors = new Set()
@@ -15,11 +17,29 @@ const Transactions = () => {
   const transaction_buttons = { "check_available": "Is book available ?", "issue_book": "Issue book ?", "return_book": "Return book ?", "pay_fine": "Pay fine ?" }
   const transactions = Object.keys(transaction_buttons)
   const [selected_transaction, set_transaction] = useState('check_available')
+  
+  const loggedInAs = localStorage.getItem("loggedInAs")
+  console.log("log",loggedInAs)
+
+  const navigateHandler = () => {
+      loggedInAs == "admin" ? navigate('/admin') : navigate('/user')
+  }
 
   return (
     <div className="">
       <h1 className="mx-auto flex justify-center py-4">Transactions</h1>
+<<<<<<< Updated upstream
       <button>Home</button>
+=======
+      <div className="flex justify-end mb-4">
+        <button
+          onClick={ navigateHandler}
+          className="btn"
+        >
+          Home
+        </button>
+      </div>
+>>>>>>> Stashed changes
       <div className="flex">
         <div className="flex px-4 w-[20%] flex-col w-44 space-y-2">
           {transactions.map((item, i) => {
