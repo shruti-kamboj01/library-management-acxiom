@@ -19,6 +19,7 @@ const Transactions = () => {
   return (
     <div className="">
       <h1 className="mx-auto flex justify-center py-4">Transactions</h1>
+      <button>Home</button>
       <div className="flex">
         <div className="flex px-4 w-[20%] flex-col w-44 space-y-2">
           {transactions.map((item, i) => {

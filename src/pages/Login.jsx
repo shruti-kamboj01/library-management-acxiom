@@ -2,15 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
-// const users = [
-//     { name: "Shruti", password: "password123", role: "admin" },
-//     { name: "Aryan", password: "securePass456", role: "user" },
-//     { name: "Mamta", password: "Pass789", role: "admin" },
-//     { name: "Khushi", password: "StrongPass", role: "user" }
-// ];
-
-
-  
 const Login = () => {
     const users = JSON.parse(localStorage.getItem("users"))
     const [formdata, setformdata] = useState({name:"", password:""})
@@ -46,7 +37,7 @@ const Login = () => {
         <div className="">
         <label className="form-control w-full max-w-xs">
           <div className="label">
-            <span className="label-text " >User Id</span>
+            <span className="label-text">User Id</span>
            
           </div>
           <input

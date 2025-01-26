@@ -7,6 +7,9 @@ import Logout from './pages/Logout'
 import Maintenance from './pages/Maintenance'
 import Reports from './pages/Reports'
 import Transactions from './pages/Transactions'
+import AddUser from './pages/AddUser'
+import Cancel from './pages/Cancel'
+import Confirmation from './pages/Confirmation'
 
 function App() {
   const books = [
@@ -172,6 +175,9 @@ const users = [
           <Route path='/maintenance' element={<Maintenance/>}/>
           <Route path='/reports' element={<Reports/>}/>
           <Route path='/transactions' element={<Transactions/>}/>
+          <Route path='/adduser' element={<AddUser/>}/>
+          <Route path='/cancel' element={<Cancel/>} />
+          <Route path='/confirmation' element={<Confirmation/>} />
     </Routes>
      
     </>
