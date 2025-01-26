@@ -19,9 +19,16 @@ const Transactions = () => {
   return (
     <div className="">
       <h1 className="mx-auto flex justify-center py-4">Transactions</h1>
-      <button>Home</button>
+      <div className="flex justify-end mb-4">
+        <button
+          onClick={() => navigate("/admin")}
+          className="btn"
+        >
+          Home
+        </button>
+      </div>
       <div className="flex">
-        <div className="flex px-4 w-[20%] flex-col w-44 space-y-2">
+        <div className="flex px-4  flex-col w-44 space-y-2">
           {transactions.map((item, i) => {
             return <button key={i} onClick={() => { set_transaction(item) }} className="btn">{transaction_buttons[item]}</button>
           })}
