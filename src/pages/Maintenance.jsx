@@ -3,6 +3,8 @@ import { useNavigate } from "react-router";
 import Add_update_user from "../components/Add_update_user";
 import AddMembership from "../components/AddMembership";
 import UpdateMembership from "../components/UpdateMembership";
+import AddBooks from "../components/AddBooks";
+import UpdateBooks from "../components/UpdateBooks";
 
 const Maintenance = () => {
   const navigate = useNavigate();
@@ -13,6 +15,8 @@ const Maintenance = () => {
   const [modal, setModal] = useState(false);
   const [AddmembershipModal, setAddMembershipModal] = useState(false);
   const [updatemembershipModal, setupdateMembershipModal] = useState(false);
+  const [addBookModal, setAddBookModal] = useState(false);
+  const [updateBookModal, setUpdateBookModal] = useState(false);
 
   return (
     <div className="flex flex-col w-11/12 mx-auto">
@@ -52,10 +56,16 @@ const Maintenance = () => {
             Books/Movies{" "}
           </h1>
           <div className="flex flex-col gap-2 mt-2 mb-2">
-            <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
+            <button
+              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+              onClick={() => setAddBookModal(true)}
+            >
               Add
             </button>
-            <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
+            <button
+              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+              onClick={() => setUpdateBookModal(true)}
+            >
               Update
             </button>
           </div>
@@ -87,6 +97,10 @@ const Maintenance = () => {
       )}
       {updatemembershipModal && (
         <UpdateMembership setupdateMembershipModal={setupdateMembershipModal} />
+      )}
+      {addBookModal && <AddBooks setAddBookModal={setAddBookModal} />}
+      {updateBookModal && (
+        <UpdateBooks setUpdateBookModal={setUpdateBookModal} />
       )}
     </div>
   );

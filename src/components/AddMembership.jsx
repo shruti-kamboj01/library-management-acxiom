@@ -71,14 +71,14 @@ const AddMembership = ({ setAddMembershipModal }) => {
                   />
                 </label>
 
-                <label className="w-full flex justify-center mr-5">
+                <label className="w-full flex justify-center ">
                   <h1 className="mt-1 text-base">Last Name -</h1>
                   <input
                     type="text"
                     name="lastName"
                     value={formData.lastName}
                     placeholder="Type here"
-                    className="input w-full max-w-xs"
+                    className="input w-full max-w-xs ml-1.5"
                     onChange={changeHandler}
                   />
                 </label>
@@ -102,7 +102,7 @@ const AddMembership = ({ setAddMembershipModal }) => {
                     name="address"
                     value={formData.address}
                     placeholder="Type here"
-                    className="input w-full max-w-xs"
+                    className="input w-full max-w-xs ml-2"
                     onChange={changeHandler}
                   />
                 </label>
