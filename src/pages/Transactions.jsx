@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Book_availability } from "../components/Book_availability";
+import { Book_availability } from "../components/BookAvailability";
 import { useNavigate } from "react-router";
+import BookIssue from "../components/BookIssue";
 
 const Transactions = () => {
   const navigate = useNavigate();
@@ -35,8 +36,8 @@ const Transactions = () => {
   };
 
   return (
-    <div className="">
-      <h1 className="mx-auto flex justify-center py-4">Transactions</h1>
+    <div className="w-11/12 mx-auto">
+      <h1 className="mx-auto flex justify-center text-lg font-semibold py-4">Transactions</h1>
       <div className="flex justify-end mb-4">
         <button onClick={navigateHandler} className="btn">
           Home
@@ -66,9 +67,20 @@ const Transactions = () => {
               available_books={available_books}
             />
           ) : (
-            <br />
+            <div className="w-[95%] pr-8">
+            {selected_transaction == "issue_book" ? (
+              <BookIssue
+                books={books}
+                available_authors={available_authors}
+                // available_books={available_books}
+              />
+            ) : (
+              <br />
+            )}
+          </div>
           )}
         </div>
+      
       </div>
 
       <div className="flex justify-end">

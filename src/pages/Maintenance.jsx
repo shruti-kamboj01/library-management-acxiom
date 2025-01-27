@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import Add_update_user from "../components/Add_update_user";
+import Add_update_user from "../components/AddUpdateUser";
 import AddMembership from "../components/AddMembership";
 import UpdateMembership from "../components/UpdateMembership";
 import AddBooks from "../components/AddBooks";

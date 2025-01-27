@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router"
+import { useNavigate } from "react-router";
 
-const AddBooks = ({setAddBookModal}) => {
- const navigate = useNavigate();
+const AddBooks = ({ setAddBookModal }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     date: "",
-    copies:"1",
+    copies: "1",
     book: "Book",
   });
 
@@ -15,9 +15,8 @@ const AddBooks = ({setAddBookModal}) => {
   };
 
   const changeHandler = (e) => {
-   
-    const { name, value, checked, type} = e.target;
-    
+    const { name, value, checked, type } = e.target;
+
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
@@ -26,9 +25,19 @@ const AddBooks = ({setAddBookModal}) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    localStorage.setItem("newBook", JSON.stringify(formData))
-    setAddBookModal(false)
-   };
+    console.log(formData.book)
+    if (formData.book === "Book") {
+      let books = JSON.parse(localStorage.getItem("books")) || [];
+      books.push(formData);
+      localStorage.setItem("books", JSON.stringify(books));
+    } else {
+      let movies = JSON.parse(localStorage.getItem("movies")) || [];
+      movies.push(formData);
+      localStorage.setItem("movies", JSON.stringify(movies));
+    }
+
+    setAddBookModal(false);
+  };
 
   const logoutHandler = () => {
     localStorage.clear();
@@ -61,11 +70,10 @@ const AddBooks = ({setAddBookModal}) => {
                   <input
                     type="radio"
                     name="book"
-                    value= "Book"
+                    value="Book"
                     className="radio"
                     onChange={changeHandler}
-                    checked={formData.book === 'Book'}
-                  
+                    checked={formData.book === "Book"}
                   />
                 </label>
                 <label className="flex gap-1">
@@ -75,7 +83,7 @@ const AddBooks = ({setAddBookModal}) => {
                     name="book"
                     value="Movie"
                     className="radio"
-                    checked={formData.book === 'Movie'}
+                    checked={formData.book === "Movie"}
                     onChange={changeHandler}
                   />
                 </label>
@@ -104,7 +112,7 @@ const AddBooks = ({setAddBookModal}) => {
                     onChange={changeHandler}
                   />
                 </label>
-                
+
                 <label className="w-full flex justify-center gap-12">
                   <h1 className="mt-1 text-base">Copies-</h1>
                   <input
@@ -117,8 +125,6 @@ const AddBooks = ({setAddBookModal}) => {
                   />
                 </label>
               </div>
-
-              
 
               <div className="flex gap-2 mb-2">
                 <button
@@ -148,6 +154,6 @@ const AddBooks = ({setAddBookModal}) => {
       </dialog>
     </div>
   );
-}
+};
 
-export default AddBooks
+export default AddBooks;

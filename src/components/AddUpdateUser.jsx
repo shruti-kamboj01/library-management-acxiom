@@ -7,7 +7,7 @@ const Add_update_user = ({ setModal }) => {
     name: "",
     password: "",
     status: false,
-    admin: false,
+    role: "",
     user: "New User",
   });
 
@@ -16,9 +16,8 @@ const Add_update_user = ({ setModal }) => {
   };
 
   const changeHandler = (e) => {
-   
-    const { name, value, checked, type} = e.target;
-    
+    const { name, value, checked, type } = e.target;
+
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
@@ -27,19 +26,16 @@ const Add_update_user = ({ setModal }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if(formData.user === 'Existing User') {
-      const existingUserName = formData.name
-      if(localStorage.getItem(existingUserName)) {
-        localStorage.removeItem(existingUserName)
-      }
-      localStorage.setItem("newUser", JSON.stringify(formData))
+    if (formData.role == false) formData.role = "user";
+    else formData.role = "admin";
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    if (formData.user === "Existing User") {
+      const existingUserName = formData.name;
+      users = users.filter((user) => user.name !== existingUserName);
     }
-    else {
-        localStorage.setItem("newUser", JSON.stringify(formData))
-    }
-   
+    users.push(formData);
+    localStorage.setItem("users", JSON.stringify(users));
     navigate("/");
-    
   };
 
   const logoutHandler = () => {
@@ -73,11 +69,10 @@ const Add_update_user = ({ setModal }) => {
                   <input
                     type="radio"
                     name="user"
-                    value= "New User"
+                    value="New User"
                     className="radio"
                     onChange={changeHandler}
-                    checked={formData.user === 'New User'}
-                  
+                    checked={formData.user === "New User"}
                   />
                 </label>
                 <label className="flex gap-1">
@@ -87,7 +82,7 @@ const Add_update_user = ({ setModal }) => {
                     name="user"
                     value="Existing User"
                     className="radio"
-                    checked={formData.user === 'Existing User'}
+                    checked={formData.user === "Existing User"}
                     onChange={changeHandler}
                   />
                 </label>
@@ -136,8 +131,8 @@ const Add_update_user = ({ setModal }) => {
                   <span className="label-text text-white">Admin</span>
                   <input
                     type="checkbox"
-                    name="admin"
-                    checked={formData.admin}
+                    name="role"
+                    checked={formData.role}
                     className="checkbox"
                     onChange={changeHandler}
                   />

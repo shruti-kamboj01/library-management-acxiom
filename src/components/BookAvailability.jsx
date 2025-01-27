@@ -7,7 +7,7 @@ export const Book_availability = ({ available_books, available_authors,books }) 
   function serachHandler() {
     if (query[0] || query[1]) {
       setResult(books.filter((book)=>{
-        return book.BookName == query[0] || book.AuthorName == query[1]
+        return book.BookName == query[0] && book.AuthorName == query[1]
       }))
       console.log(searchResults)
       setShowForm((prev) => !prev)
