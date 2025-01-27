@@ -1,17 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
-const AddMembership = ({ setAddMembershipModal }) => {
+const UpdateMembership = ({ setupdateMembershipModal }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    contactName: "",
-    aadharNumber: "",
-    address: "",
+    membershipNo: "",
     startDate: "",
     endDate: "",
-    Membership: "",
+    membershipExtn: "",
+    membershipRemove: "",
   });
 
   const navigateHandler = () => {
@@ -29,8 +26,12 @@ const AddMembership = ({ setAddMembershipModal }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    localStorage.setItem("addMembership", JSON.stringify(formData));
-    navigate("/admin");
+    if (localStorage.getItem(formData.membershipNo)) {
+      localStorage.setItem("updateMembership", JSON.stringify(formData));
+    } else {
+      alert("Membership does not exist");
+    }
+    setupdateMembershipModal(false);
   };
 
   const logoutHandler = () => {
@@ -38,7 +39,7 @@ const AddMembership = ({ setAddMembershipModal }) => {
     navigate("/logout");
   };
   return (
-    <div className="w-11/12 mx-auto">
+    <div className="">
       <dialog
         id="my_modal_5"
         className="modal modal-open modal-bottom sm:modal-middle"
@@ -53,71 +54,23 @@ const AddMembership = ({ setAddMembershipModal }) => {
             </button>
           </div>
           <div className="flex flex-col items-center gap-3">
-            <h1>Add Membership</h1>
+            <h1>Update Membership</h1>
             <form
               className="flex flex-col items-center border gap-2 w-full mx-auto"
               onSubmit={submitHandler}
             >
               <div className="flex flex-col mx-auto items-center gap-3 mt-2 w-full">
                 <label className="w-full flex justify-center">
-                  <h1 className="mt-1 text-base">First Name -</h1>
+                  <h1 className="mt-1 text-base">Membership No -</h1>
                   <input
                     type="text"
-                    name="firstName"
-                    value={formData.firstName}
+                    name="membershipNo"
+                    value={formData.membershipNo}
                     placeholder="Type here"
                     className="input w-full max-w-xs"
                     onChange={changeHandler}
                   />
                 </label>
-
-                <label className="w-full flex justify-center mr-5">
-                  <h1 className="mt-1 text-base">Last Name -</h1>
-                  <input
-                    type="text"
-                    name="lastName"
-                    value={formData.lastName}
-                    placeholder="Type here"
-                    className="input w-full max-w-xs"
-                    onChange={changeHandler}
-                  />
-                </label>
-
-                <label className="w-full flex justify-center">
-                  <h1 className="mt-1 text-base">Contact Name-</h1>
-                  <input
-                    type="text"
-                    name="contactName"
-                    value={formData.contactName}
-                    placeholder="Type here"
-                    className="input w-full max-w-xs"
-                    onChange={changeHandler}
-                  />
-                </label>
-
-                <label className="w-full flex justify-center mr-5">
-                  <h1 className="mt-1 text-base">Contact Add-</h1>
-                  <input
-                    type="text"
-                    name="address"
-                    value={formData.address}
-                    placeholder="Type here"
-                    className="input w-full max-w-xs"
-                    onChange={changeHandler}
-                  />
-                </label>
-                <label className="w-full flex justify-center mr-5">
-                  <h1 className="mt-1 text-base">Aadhar No-</h1>
-                  <input
-                    type="text"
-                    name="aadharNumber"
-                    value={formData.aadharNumber}
-                    placeholder="Type here"
-                    className="input w-full max-w-xs"
-                    onChange={changeHandler}
-                  />
-                </label>
-
                 <label className="w-full flex justify-center">
                   <h1 className="mt-1 text-base">Start Date -</h1>
                   <input
@@ -147,21 +100,21 @@ const AddMembership = ({ setAddMembershipModal }) => {
                   Six months
                   <input
                     type="radio"
-                    name="Membership"
+                    name="membershipExtn"
                     value="six months"
                     className="radio"
                     onChange={changeHandler}
-                    checked={formData.Membership === "six months"}
+                    checked={formData.membershipExtn === "six months"}
                   />
                 </label>
                 <label className="flex gap-1">
                   One Year
                   <input
                     type="radio"
-                    name="Membership"
+                    name="membershipExtn"
                     value="One Year"
                     className="radio"
-                    checked={formData.Membership === "One Year"}
+                    checked={formData.membershipExtn === "One Year"}
                     onChange={changeHandler}
                   />
                 </label>
@@ -169,18 +122,29 @@ const AddMembership = ({ setAddMembershipModal }) => {
                   Two Years
                   <input
                     type="radio"
-                    name="Membership"
+                    name="membershipExtn"
                     value="Two Years"
                     className="radio"
                     onChange={changeHandler}
-                    checked={formData.Membership === "Two Years"}
+                    checked={formData.membershipExtn === "Two Years"}
                   />
                 </label>
               </div>
+              <label className="flex gap-1">
+                Membership Remove
+                <input
+                  type="radio"
+                  name="membershipRemove"
+                  value="membershipRemove"
+                  className="radio"
+                  onChange={changeHandler}
+                  checked={formData.membershipRemove === "membershipRemove"}
+                />
+              </label>
 
               <div className="flex gap-2 mb-2">
                 <button
-                  onClick={() => setAddMembershipModal(false)}
+                  onClick={() => setupdateMembershipModal(false)}
                   className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
                 >
                   Cancel
@@ -208,4 +172,4 @@ const AddMembership = ({ setAddMembershipModal }) => {
   );
 };
 
-export default AddMembership;
+export default UpdateMembership;
