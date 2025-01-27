@@ -15,7 +15,7 @@ const User = () => {
   }
 
   return (
-    <div className="flex flex-col gap-y-3 w-11/12 mt-2">
+    <div className="flex flex-col gap-y-3 mx-auto w-11/12 mt-2">
       <div className="flex justify-between">
         <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
           Home page

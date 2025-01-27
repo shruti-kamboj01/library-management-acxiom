@@ -33,7 +33,7 @@ export const Book_availability = ({ available_books, available_authors,books }) 
                   <option value={null}>Select book name</option>
                   {
                     available_books.map((book, i) => {
-                      return <option key={i} value={book}>{book}</option>
+                      return <option key={i} className='text-black' value={book}>{book}</option>
                     })
                   }
                 </select>
@@ -44,7 +44,7 @@ export const Book_availability = ({ available_books, available_authors,books }) 
                   <option value={null}>Select author</option>
                   {
                     available_authors.map((author, i) => {
-                      return <option key={i} value={author}>{author}</option>
+                      return <option key={i} className='text-black' value={author}>{author}</option>
                     })
                   }
                 </select>
@@ -72,10 +72,17 @@ export const Book_availability = ({ available_books, available_authors,books }) 
                     <td><input onChange={bookSelected} value={book['SerialNumber']} type="radio" name="selected_book" /></td>
                   </tr>
                 })
-
+             
               }
             </thead>
-
+             <div>
+             <button
+          onClick={() => setShowForm(true)}
+          className="btn btn-xs sm:btn-sm md:btn-md mt-3 lg:btn-lg"
+        >
+          Cancel
+        </button>
+             </div>
           </table>
         }
       </div>

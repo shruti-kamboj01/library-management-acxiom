@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
-const Add_update_user = ({ modal, setModal }) => {
+const Add_update_user = ({ setModal }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
