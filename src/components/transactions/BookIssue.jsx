@@ -11,7 +11,7 @@ const BookIssue = ({serial_no,  books, available_books, available_authors}) => {
     returnDate: "",
     remarks: "",
   });
- console.log(serial_no)
+//  console.log(serial_no)
   const changeHandler = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -19,24 +19,17 @@ const BookIssue = ({serial_no,  books, available_books, available_authors}) => {
       [name]: value,
     }));
   };
- console.log(formData)
+//  console.log(formData)
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(formData)
-    const bookName = formData.name
-    const serialNo = formData.serialNo
-    let books = JSON.parse(localStorage.getItem("books")) || [];
-    console.log(books)
-    const foundBook = books.find(book => book.BookName === bookName)
-    const foundSerialNo = serial_no.filter(num => num === serialNo)
-    console.log(foundSerialNo[0])
-    if(foundBook && foundSerialNo[0]) {
+    const foundBook = books.find(book => book.SerialNumber === formData.serialNo)
+    if(foundBook) {
         foundBook.Available = "No"
         foundBook.IssueDate = formData.issueDate
-        foundBook.ReturnDate = formData.returnDate
+        foundBook.ActualReturnDate = formData.returnDate
+        localStorage.setItem("books", JSON.stringify(books));
     }
-    console.log(foundBook)
-    localStorage.setItem("books", JSON.stringify(books));
+    // setFormData("")
    };
 
   return (

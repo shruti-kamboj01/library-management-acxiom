@@ -21,6 +21,7 @@ function App() {
       Available: "Yes",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "The Great Gatsby",
@@ -30,6 +31,7 @@ function App() {
       Available: "Yes",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "To Kill a Mockingbird",
@@ -39,6 +41,7 @@ function App() {
       Available: "Yes",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "To Kill a Mockingbird",
@@ -48,6 +51,7 @@ function App() {
       Available: "Yes",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "1984",
@@ -57,6 +61,7 @@ function App() {
       Available: "Yes",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "1984",
@@ -66,6 +71,7 @@ function App() {
       Available: "No",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "Pride and Prejudice",
@@ -75,6 +81,7 @@ function App() {
       Available: "Yes",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "Pride and Prejudice",
@@ -84,6 +91,7 @@ function App() {
       Available: "No",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "Moby Dick",
@@ -93,6 +101,7 @@ function App() {
       Available: "Yes",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "Moby Dick",
@@ -102,6 +111,7 @@ function App() {
       Available: "No",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "War and Peace",
@@ -111,6 +121,7 @@ function App() {
       Available: "Yes",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "War and Peace",
@@ -120,6 +131,7 @@ function App() {
       Available: "No",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "The Catcher in the Rye",
@@ -129,6 +141,7 @@ function App() {
       Available: "Yes",
       IssueDate: "",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "The Catcher in the Rye",
@@ -138,6 +151,7 @@ function App() {
       Available: "No",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "The Hobbit",
@@ -147,6 +161,7 @@ function App() {
       Available: "Yes",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "The Hobbit",
@@ -156,6 +171,7 @@ function App() {
       Available: "No",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "Brave New World",
@@ -165,6 +181,7 @@ function App() {
       Available: "Yes",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "Brave New World",
@@ -174,6 +191,7 @@ function App() {
       Available: "No",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "The Odyssey",
@@ -183,6 +201,7 @@ function App() {
       Available: "Yes",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
     {
       BookName: "The Odyssey",
@@ -192,6 +211,7 @@ function App() {
       Available: "No",
       IssueDate:"",
       ReturnDate:"",
+      ActualReturnDate:""
     },
   ];
 
