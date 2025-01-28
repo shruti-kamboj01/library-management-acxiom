@@ -3,6 +3,7 @@ import { Book_availability } from "../components/transactions/BookAvailability";
 import { useNavigate } from "react-router";
 import BookIssue from "../components/transactions/BookIssue";
 import ReturnBook from "../components/transactions/ReturnBook";
+import PayFine from "../components/transactions/PayFine";
 
 const Transactions = () => {
   const navigate = useNavigate();
@@ -84,6 +85,14 @@ const Transactions = () => {
             ) :
             selected_transaction === "return_book" ? (
               <ReturnBook
+                books={books}
+                available_authors={available_authors}
+                available_books={available_books}
+                serial_no = {serial_no}
+              />
+            ):
+            selected_transaction === "pay_fine" ? (
+              <PayFine
                 books={books}
                 available_authors={available_authors}
                 available_books={available_books}
