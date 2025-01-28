@@ -1,19 +1,26 @@
 import React, { useState } from "react";
-import { Book_availability } from "../components/BookAvailability";
+import { Book_availability } from "../components/transactions/BookAvailability";
 import { useNavigate } from "react-router";
-import BookIssue from "../components/BookIssue";
+import BookIssue from "../components/transactions/BookIssue";
+import ReturnBook from "../components/transactions/ReturnBook";
 
 const Transactions = () => {
   const navigate = useNavigate();
   const books = JSON.parse(localStorage.getItem("books"));
+  
   let available_books = new Set();
   let available_authors = new Set();
+  let serial_no = new Set();
+  
   books.forEach((book) => {
     available_books.add(book.BookName);
     available_authors.add(book.AuthorName);
+    serial_no.add(book.SerialNumber);
   });
   available_books = Array.from(available_books);
   available_authors = Array.from(available_authors);
+  serial_no = Array.from(serial_no)
+  // console.log(serial_no)
 
   const transaction_buttons = {
     check_available: "Is book available ?",
@@ -60,25 +67,32 @@ const Transactions = () => {
           })}
         </div>
         <div className="w-[80%] pr-8">
-          {selected_transaction == "check_available" ? (
+          {selected_transaction === "check_available" ? (
             <Book_availability
               books={books}
               available_authors={available_authors}
               available_books={available_books}
             />
-          ) : (
-            <div className="w-[95%] pr-8">
-            {selected_transaction == "issue_book" ? (
+          ) : 
+            selected_transaction === "issue_book" ? (
               <BookIssue
+              books={books}
+              available_authors={available_authors}
+              available_books={available_books}
+              serial_no = {serial_no} 
+              />
+            ) :
+            selected_transaction === "return_book" ? (
+              <ReturnBook
                 books={books}
                 available_authors={available_authors}
-                // available_books={available_books}
+                available_books={available_books}
+                serial_no = {serial_no}
               />
-            ) : (
+            ): (
               <br />
-            )}
-          </div>
-          )}
+            )
+          }
         </div>
       
       </div>

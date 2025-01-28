@@ -25,7 +25,7 @@ const AddBooks = ({ setAddBookModal }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(formData.book)
+    // console.log(formData.book)
     if (formData.book === "Book") {
       let books = JSON.parse(localStorage.getItem("books")) || [];
       books.push(formData);

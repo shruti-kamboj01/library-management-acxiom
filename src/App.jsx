@@ -19,13 +19,17 @@ function App() {
       SerialNumber: "001-1",
       SelectToIssue: false,
       Available: "Yes",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "The Great Gatsby",
       AuthorName: "F. Scott Fitzgerald",
       SerialNumber: "001-2",
       SelectToIssue: false,
-      Available: "No",
+      Available: "Yes",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "To Kill a Mockingbird",
@@ -33,13 +37,17 @@ function App() {
       SerialNumber: "002-1",
       SelectToIssue: true,
       Available: "Yes",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "To Kill a Mockingbird",
       AuthorName: "Harper Lee",
       SerialNumber: "002-2",
       SelectToIssue: true,
-      Available: "No",
+      Available: "Yes",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "1984",
@@ -47,6 +55,8 @@ function App() {
       SerialNumber: "003-1",
       SelectToIssue: false,
       Available: "Yes",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "1984",
@@ -54,6 +64,8 @@ function App() {
       SerialNumber: "003-2",
       SelectToIssue: false,
       Available: "No",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "Pride and Prejudice",
@@ -61,6 +73,8 @@ function App() {
       SerialNumber: "004-1",
       SelectToIssue: true,
       Available: "Yes",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "Pride and Prejudice",
@@ -68,6 +82,8 @@ function App() {
       SerialNumber: "004-2",
       SelectToIssue: false,
       Available: "No",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "Moby Dick",
@@ -75,6 +91,8 @@ function App() {
       SerialNumber: "005-1",
       SelectToIssue: false,
       Available: "Yes",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "Moby Dick",
@@ -82,6 +100,8 @@ function App() {
       SerialNumber: "005-2",
       SelectToIssue: false,
       Available: "No",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "War and Peace",
@@ -89,6 +109,8 @@ function App() {
       SerialNumber: "006-1",
       SelectToIssue: true,
       Available: "Yes",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "War and Peace",
@@ -96,6 +118,8 @@ function App() {
       SerialNumber: "006-2",
       SelectToIssue: true,
       Available: "No",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "The Catcher in the Rye",
@@ -103,6 +127,8 @@ function App() {
       SerialNumber: "007-1",
       SelectToIssue: false,
       Available: "Yes",
+      IssueDate: "",
+      ReturnDate:"",
     },
     {
       BookName: "The Catcher in the Rye",
@@ -110,6 +136,8 @@ function App() {
       SerialNumber: "007-2",
       SelectToIssue: false,
       Available: "No",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "The Hobbit",
@@ -117,6 +145,8 @@ function App() {
       SerialNumber: "008-1",
       SelectToIssue: true,
       Available: "Yes",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "The Hobbit",
@@ -124,6 +154,8 @@ function App() {
       SerialNumber: "008-2",
       SelectToIssue: true,
       Available: "No",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "Brave New World",
@@ -131,6 +163,8 @@ function App() {
       SerialNumber: "009-1",
       SelectToIssue: false,
       Available: "Yes",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "Brave New World",
@@ -138,6 +172,8 @@ function App() {
       SerialNumber: "009-2",
       SelectToIssue: false,
       Available: "No",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "The Odyssey",
@@ -145,6 +181,8 @@ function App() {
       SerialNumber: "010-1",
       SelectToIssue: true,
       Available: "Yes",
+      IssueDate:"",
+      ReturnDate:"",
     },
     {
       BookName: "The Odyssey",
@@ -152,6 +190,8 @@ function App() {
       SerialNumber: "010-2",
       SelectToIssue: true,
       Available: "No",
+      IssueDate:"",
+      ReturnDate:"",
     },
   ];
 

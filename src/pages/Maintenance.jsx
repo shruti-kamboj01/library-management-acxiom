@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import Add_update_user from "../components/AddUpdateUser";
-import AddMembership from "../components/AddMembership";
-import UpdateMembership from "../components/UpdateMembership";
-import AddBooks from "../components/AddBooks";
-import UpdateBooks from "../components/UpdateBooks";
+import Add_update_user from "../components/maintenance/AddUpdateUser";
+import AddMembership from "../components/maintenance/AddMembership";
+import UpdateMembership from "../components/maintenance/UpdateMembership";
+import AddBooks from "../components/maintenance/AddBooks";
+import UpdateBooks from "../components/maintenance/UpdateBooks";
 
 const Maintenance = () => {
   const navigate = useNavigate();
