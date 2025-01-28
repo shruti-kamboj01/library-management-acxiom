@@ -39,7 +39,7 @@ const Transactions = () => {
   };
 
   const logoutHandler = () => {
-    localStorage.clear();
+  
     navigate("/logout");
   };
 

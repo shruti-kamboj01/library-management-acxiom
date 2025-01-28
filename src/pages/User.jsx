@@ -10,7 +10,6 @@ const User = () => {
   localStorage.setItem("loggedInAs", pathname);
   
   const logoutHandler = () => {
-    localStorage.clear()
     navigate('/logout')
   }
 

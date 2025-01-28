@@ -5,7 +5,7 @@ const Cancel = () => {
     const navigate = useNavigate()
     
   const logoutHandler = () => {
-    localStorage.clear()
+    // localStorage.clear()
     navigate('/admin')
   }
   return (
