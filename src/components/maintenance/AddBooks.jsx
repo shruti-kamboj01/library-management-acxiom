@@ -40,7 +40,6 @@ const AddBooks = ({ setAddBookModal }) => {
   };
 
   const logoutHandler = () => {
-    localStorage.clear();
     navigate("/logout");
   };
   return (
@@ -53,7 +52,7 @@ const AddBooks = ({ setAddBookModal }) => {
           <div className="flex justify-end ">
             <button
               onClick={navigateHandler}
-              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+              className="btn btn-xs sm:btn-sm md:btn-md"
             >
               Home
             </button>
@@ -129,12 +128,12 @@ const AddBooks = ({ setAddBookModal }) => {
               <div className="flex gap-2 mb-2">
                 <button
                   onClick={() => setAddBookModal(false)}
-                  className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+                  className="btn btn-xs sm:btn-sm md:btn-md"
                 >
                   Cancel
                 </button>
                 <button
-                  className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+                  className="btn btn-xs sm:btn-sm md:btn-md"
                   type="submit"
                 >
                   Confirm
@@ -145,7 +144,7 @@ const AddBooks = ({ setAddBookModal }) => {
           <div className="flex justify-end mt-2">
             <button
               onClick={logoutHandler}
-              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+              className="btn btn-xs sm:btn-sm md:btn-md"
             >
               Log Out
             </button>

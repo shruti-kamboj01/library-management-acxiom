@@ -1,9 +1,7 @@
 import React from 'react'
-import { useNavigate } from 'react-router'
+
 
 const IssueReq = () => {
-  const navigate = useNavigate()
-    const loggedInAs = localStorage.getItem("loggedInAs")
   return (
     <div className='flex flex-col w-full'>
        
