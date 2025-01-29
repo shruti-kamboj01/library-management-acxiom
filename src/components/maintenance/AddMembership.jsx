@@ -6,12 +6,13 @@ const AddMembership = ({ setAddMembershipModal }) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    contactName: "",
+    contactNumber: "",
     aadharNumber: "",
     address: "",
     startDate: "",
     endDate: "",
     Membership: "",
+    status: false,
   });
 
   const navigateHandler = () => {
@@ -26,11 +27,24 @@ const AddMembership = ({ setAddMembershipModal }) => {
       [name]: type === "checkbox" ? checked : value,
     }));
   };
-
+  let array = [];
   const submitHandler = (e) => {
     e.preventDefault();
-    localStorage.setItem("addMembership", JSON.stringify(formData));
-    navigate("/admin");
+    if (formData.role == false) formData.status = "Inactive";
+    else formData.status = "Active";
+    console.log(formData);
+    array = [...array, formData];
+    console.log(array);
+    if (!localStorage.getItem("addMembership")) {
+      localStorage.setItem("addMembership", JSON.stringify(array));
+    } else {
+      const data = JSON.parse(localStorage.getItem("addMembership"));
+      data.push(formData);
+      console.log(data);
+
+      localStorage.setItem("addMembership", JSON.stringify(data));
+    }
+    setAddMembershipModal(false);
   };
 
   const logoutHandler = () => {
@@ -47,7 +61,7 @@ const AddMembership = ({ setAddMembershipModal }) => {
           <div className="flex justify-end ">
             <button
               onClick={navigateHandler}
-              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+              className="btn btn-xs sm:btn-sm md:btn-md"
             >
               Home
             </button>
@@ -84,11 +98,12 @@ const AddMembership = ({ setAddMembershipModal }) => {
                 </label>
 
                 <label className="w-full flex justify-center">
-                  <h1 className="mt-1 text-base">Contact Name-</h1>
+                  <h1 className="mt-1 text-base">Contact No -</h1>
                   <input
-                    type="text"
-                    name="contactName"
-                    value={formData.contactName}
+                    type="tel"
+                    name="contactNumber"
+                    value={formData.contactNumber}
+                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
                     placeholder="Type here"
                     className="input w-full max-w-xs"
                     onChange={changeHandler}
@@ -107,13 +122,13 @@ const AddMembership = ({ setAddMembershipModal }) => {
                   />
                 </label>
                 <label className="w-full flex justify-center mr-5">
-                  <h1 className="mt-1 text-base">Aadhar No-</h1>
+                  <h1 className="mt-1 text-base">Aadhar No -</h1>
                   <input
                     type="text"
                     name="aadharNumber"
                     value={formData.aadharNumber}
                     placeholder="Type here"
-                    className="input w-full max-w-xs"
+                    className="input w-full max-w-xs ml-2.5"
                     onChange={changeHandler}
                   />
                 </label>
@@ -177,16 +192,28 @@ const AddMembership = ({ setAddMembershipModal }) => {
                   />
                 </label>
               </div>
+              <div className="flex ml-10 w-full">
+                <label className="flex gap-1">
+                  Status
+                  <input
+                    type="checkbox"
+                    name="status"
+                    className="checkbox"
+                    checked={formData.status}
+                    onChange={changeHandler}
+                  />
+                </label>
+              </div>
 
               <div className="flex gap-2 mb-2">
                 <button
                   onClick={() => setAddMembershipModal(false)}
-                  className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+                  className="btn btn-xs sm:btn-sm md:btn-md "
                 >
                   Cancel
                 </button>
                 <button
-                  className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+                  className="btn btn-xs sm:btn-sm md:btn-md"
                   type="submit"
                 >
                   Confirm

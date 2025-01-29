@@ -20,10 +20,10 @@ const IssueReq = () => {
     </thead>
     <tbody>
       <tr className=''>
-        <th className='border-r-2 border-gray-400'>1</th>
-        <td className='border-r-2 border-gray-400'>Cy Ganderton</td>
-        <td className='border-r-2 border-gray-400'>Quality Control Specialist</td>
-        <td >Blue</td>
+        <th className='border-r-2 border-gray-400'></th>
+        <td className='border-r-2 border-gray-400'></td>
+        <td className='border-r-2 border-gray-400'></td>
+        <td></td>
       </tr>
     
     

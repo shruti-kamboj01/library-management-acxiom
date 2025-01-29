@@ -39,27 +39,24 @@ const PayFine = ( { books,serial_no, available_books, available_authors}) => {
         const book = books.find((book) => book.SerialNumber === num);
         setactualreturnDate(book.ActualReturnDate);
       }
-    
-    //   function submitHandler(e) {
-    //     e.preventDefault();
-    //     const foundBook = books.find(
-    //       (book) => book.SerialNumber === formData.serialNo
-    //     );
-    
-    //     if (foundBook) {
-    //       foundBook.Available = "Yes";
-    //       foundBook.ReturnDate = formData.returnDate;
-    //       localStorage.setItem("books", JSON.stringify(books));
-    //     }
-    //     // setFormData("")
-    //     // setDate("")
-    //   }
+      
+      function submitHandler(e) {
+        e.preventDefault();
+        if(!localStorage.getItem("fine")) {
+          localStorage.setItem("fine", JSON.stringify(formData))
+        }
+        else {
+          let data = JSON.parse(localStorage.getItem("fine"))
+          data.push(formData)
+          localStorage.setItem("fine", data)
+        }
+      }
   return (
     <div className="w-full border-2 border-white  py-8">
         <h1 className="flex flex-col text-center ">PayFine</h1>
         <form
         className="flex flex-col space-y-4 mt-4 w-full"
-        
+        onSubmit={submitHandler}
       >
         <label className="grid grid-flow-col grid-cols-2 px-8">
           <h1 className="">Enter Book Name :</h1>
