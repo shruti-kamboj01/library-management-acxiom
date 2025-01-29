@@ -23,7 +23,7 @@ const Maintenance = () => {
       <div className="flex justify-end">
         <button
           onClick={navigateHandler}
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+          className="btn btn-xs sm:btn-sm md:btn-md"
         >
           Home
         </button>

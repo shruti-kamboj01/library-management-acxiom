@@ -29,18 +29,14 @@ const Transactions = () => {
     return_book: "Return book ?",
     pay_fine: "Pay fine ?",
   };
+  
   const transactions = Object.keys(transaction_buttons);
-  const [selected_transaction, set_transaction] = useState("check_available");
+  const [selected_transaction, set_transaction] = useState("");
 
   const loggedInAs = localStorage.getItem("loggedInAs");
 
   const navigateHandler = () => {
     loggedInAs == "admin" ? navigate("/admin") : navigate("/user");
-  };
-
-  const logoutHandler = () => {
-  
-    navigate("/logout");
   };
 
   return (
@@ -52,7 +48,7 @@ const Transactions = () => {
         </button>
       </div>
       <div className="flex">
-        <div className="flex px-4 flex-col w-44 space-y-2">
+        <div className="flex px-4 flex-col w-50 space-y-2">
           {transactions.map((item, i) => {
             return (
               <button
@@ -108,8 +104,8 @@ const Transactions = () => {
 
       <div className="flex justify-end">
         <button
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
-          onClick={logoutHandler}
+          className="btn btn-xs sm:btn-sm md:btn-md"
+          onClick={() => navigate("/logout")}
         >
           Log Out
         </button>

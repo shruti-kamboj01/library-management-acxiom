@@ -16,7 +16,7 @@ const User = () => {
   return (
     <div className="flex flex-col gap-y-3 mx-auto w-11/12 mt-2">
       <div className="flex justify-between">
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
+        <button className="btn btn-xs sm:btn-sm md:btn-md">
           Home
         </button>
         <h1>Home Page </h1>
@@ -78,7 +78,7 @@ const User = () => {
       </div>
       <div className="flex justify-end">
         <button
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+          className="btn btn-xs sm:btn-sm md:btn-md"
           onClick={logoutHandler}
         >
           Log Out
